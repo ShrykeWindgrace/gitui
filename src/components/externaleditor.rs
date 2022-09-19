@@ -79,6 +79,7 @@ impl ExternalEditorComponent {
 			.or_else(|| env::var(environment_options[1]).ok())
 			.or_else(|| env::var(environment_options[2]).ok())
 			.unwrap_or_else(|| String::from("vi"));
+		print!("debug: editor path {}", editor);
 
 		// TODO: proper handling arguments containing whitespaces
 		// This does not do the right thing if the input is `editor --something "with spaces"`
